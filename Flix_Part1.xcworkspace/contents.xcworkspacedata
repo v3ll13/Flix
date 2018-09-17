@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/ralphalexcharlemagne/Desktop/Flix_Part1/Flix_Part1/NowPlayingViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:Flix_Part1.xcodeproj">
    </FileRef>
    <FileRef

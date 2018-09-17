@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		79B16DC2DB131E786FA2C075 /* Pods_Flix_Part1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05E697E5B66705CE4FF574D /* Pods_Flix_Part1Tests.framework */; };
 		C1BA09790AD1F27B52FAD848 /* Pods_Flix_Part1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5672613DD26F9D2692D0CB /* Pods_Flix_Part1.framework */; };
+		F30E209A215033C700B4DC73 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E2099215033C700B4DC73 /* NowPlayingViewController.swift */; };
 		F3BF2CE1214EA15D0051855C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF2CE0214EA15D0051855C /* AppDelegate.swift */; };
-		F3BF2CE3214EA15D0051855C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF2CE2214EA15D0051855C /* FirstViewController.swift */; };
-		F3BF2CE5214EA15D0051855C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF2CE4214EA15D0051855C /* SecondViewController.swift */; };
+		F3BF2CE5214EA15D0051855C /* RatedMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF2CE4214EA15D0051855C /* RatedMoviesViewController.swift */; };
 		F3BF2CE8214EA15D0051855C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3BF2CE6214EA15D0051855C /* Main.storyboard */; };
 		F3BF2CEA214EA15D0051855C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BF2CE9214EA15D0051855C /* Assets.xcassets */; };
 		F3BF2CED214EA15D0051855C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3BF2CEB214EA15D0051855C /* LaunchScreen.storyboard */; };
@@ -46,10 +46,10 @@
 		B81DEECF3BBE6C0AB902CF46 /* Pods-Flix_Part1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix_Part1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flix_Part1/Pods-Flix_Part1.release.xcconfig"; sourceTree = "<group>"; };
 		C05E697E5B66705CE4FF574D /* Pods_Flix_Part1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_Part1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9856818D8A0572C7C55BF14 /* Pods-Flix_Part1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix_Part1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flix_Part1Tests/Pods-Flix_Part1Tests.release.xcconfig"; sourceTree = "<group>"; };
+		F30E2099215033C700B4DC73 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingViewController.swift; path = /Users/ralphalexcharlemagne/Desktop/Flix_Part1/Flix_Part1/NowPlayingViewController.swift; sourceTree = "<absolute>"; };
 		F3BF2CDD214EA15D0051855C /* Flix_Part1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix_Part1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BF2CE0214EA15D0051855C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3BF2CE2214EA15D0051855C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		F3BF2CE4214EA15D0051855C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F3BF2CE4214EA15D0051855C /* RatedMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatedMoviesViewController.swift; sourceTree = "<group>"; };
 		F3BF2CE7214EA15D0051855C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3BF2CE9214EA15D0051855C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3BF2CEC214EA15D0051855C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -139,9 +139,9 @@
 		F3BF2CDF214EA15D0051855C /* Flix_Part1 */ = {
 			isa = PBXGroup;
 			children = (
+				F30E2099215033C700B4DC73 /* NowPlayingViewController.swift */,
 				F3BF2CE0214EA15D0051855C /* AppDelegate.swift */,
-				F3BF2CE2214EA15D0051855C /* FirstViewController.swift */,
-				F3BF2CE4214EA15D0051855C /* SecondViewController.swift */,
+				F3BF2CE4214EA15D0051855C /* RatedMoviesViewController.swift */,
 				F3BF2CE6214EA15D0051855C /* Main.storyboard */,
 				F3BF2CE9214EA15D0051855C /* Assets.xcassets */,
 				F3BF2CEB214EA15D0051855C /* LaunchScreen.storyboard */,
@@ -307,15 +307,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Flix_Part1Tests-checkManifestLockResult.txt",
 			);
@@ -329,15 +325,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Flix_Part1-checkManifestLockResult.txt",
 			);
@@ -351,15 +343,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Flix_Part1UITests-checkManifestLockResult.txt",
 			);
@@ -373,16 +361,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Flix_Part1/Pods-Flix_Part1-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
@@ -399,9 +383,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3BF2CE5214EA15D0051855C /* SecondViewController.swift in Sources */,
+				F3BF2CE5214EA15D0051855C /* RatedMoviesViewController.swift in Sources */,
+				F30E209A215033C700B4DC73 /* NowPlayingViewController.swift in Sources */,
 				F3BF2CE1214EA15D0051855C /* AppDelegate.swift in Sources */,
-				F3BF2CE3214EA15D0051855C /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
