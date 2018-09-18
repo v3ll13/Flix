@@ -7,12 +7,48 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class RatedMoviesController: UIViewController {
+class RatedMoviesController: UIViewController , UITableViewDataSource{
+    
+    //-------------------METHODS--------------------------
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RatedCell", for: indexPath) as! RatedCell
+        let movie = movies[indexPath.row]
+        let title = movie["title"] as! String
+        let overview =  movie["overview"] as! String
+        //let ratedMov = movie["vote_average"] as! String
+        cell.rtdOverview.text = overview
+        //cell.rtdRate. = String(ratedMov)
+        cell.rtdTitle.text = title
+        
+        //request the images
+        let posterPathString = movie["poster_path"] as! String
+        let baseURLString = "https://image.tmdb.org/t/p/w500"
+        let posterURL = URL(string: baseURLString + posterPathString)!
+        cell.postImageView.af_setImage(withURL: posterURL)
+        
+        
+        return cell
+    }
+    //-------------------ENDofMETHODS---------------------
 
+    @IBOutlet weak var rtdTableView: UITableView!
+    var movies: [[String: Any]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
+        rtdTableView.dataSource = self
+        rtdTableView.rowHeight = 210
+        rtdTableView.estimatedRowHeight = 250
+        
         
         //---Creating url---
         let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
@@ -31,11 +67,14 @@ class RatedMoviesController: UIViewController {
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 
+                let movies = dataDictionary["results"] as! [[String: Any]]
                 // TODO: Get the array of movies
+                self.movies = movies
                 
                 // TODO: Store the movies in a property to use elsewhere
                 
                 // TODO: Reload your table view data
+                self.rtdTableView.reloadData()
                 
             }
         }
