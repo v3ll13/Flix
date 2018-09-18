@@ -17,6 +17,8 @@ class RatedCell: UITableViewCell {
     @IBOutlet weak var rtdOverview: UILabel!
     @IBOutlet weak var rtdRate: UILabel!
     
+      var rateGiven : Double = 0.0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -21,9 +21,9 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
         let overview =  movie["overview"] as! String
-        //let ratedMov = movie["vote_average"] as! String
+        let ratedMov = movie["vote_average"] as! Double
         cell.rtdOverview.text = overview
-        //cell.rtdRate. = String(ratedMov)
+        cell.rateGiven = ratedMov
         cell.rtdTitle.text = title
         
         //request the images
@@ -35,30 +35,17 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
         
         return cell
     }
-    //-------------------ENDofMETHODS---------------------
-
-    @IBOutlet weak var rtdTableView: UITableView!
-    var movies: [[String: Any]] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        rtdTableView.dataSource = self
-        rtdTableView.rowHeight = 210
-        rtdTableView.estimatedRowHeight = 250
-        
-        
+    func fetchRatedMovies(){
         //---Creating url---
         let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         //---creating a request---
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         
-        //---coordonate task of network request
+        //---coordonate task of network request---
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         
-        //---creating a task to get the data
+        //---creating a task to get the data---
         let task = session.dataTask(with: request) { (data, response, error) in
             
             // This will run when the network request returns
@@ -79,6 +66,32 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
             }
         }
         task.resume()
+    }
+    @objc func didPullToRefresh(_ refreshControl:  UIRefreshControl){
+                    fetchRatedMovies()
+    }
+    //-------------------------------------ENDofMETHODS----------------------------
+
+    @IBOutlet weak var rtdTableView: UITableView!
+    var movies: [[String: Any]] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //----------refresh control instanciation----------
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(RatedMoviesController.didPullToRefresh(_:)), for: .valueChanged)
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        rtdTableView.dataSource = self
+        rtdTableView.rowHeight = 210
+        rtdTableView.estimatedRowHeight = 250
+        
+        //inserting subviews
+        rtdTableView.insertSubview(refreshControl, at: 0)
+        
+        fetchRatedMovies()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

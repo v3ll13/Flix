@@ -114,11 +114,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate : 8.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYv-LI-36W">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYv-LI-36W">
                                                     <rect key="frame" x="15" y="167" width="345" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Rate : 8.6">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -126,7 +131,6 @@
                                         <connections>
                                             <outlet property="postImageView" destination="lxL-yu-Uz2" id="gKY-47-A0F"/>
                                             <outlet property="rtdOverview" destination="xwA-gf-4LE" id="QuO-Do-QLM"/>
-                                            <outlet property="rtdRate" destination="OYv-LI-36W" id="oL4-2V-sZp"/>
                                             <outlet property="rtdTitle" destination="x2m-rk-qGZ" id="2Wq-sR-lhI"/>
                                         </connections>
                                     </tableViewCell>
@@ -136,14 +140,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" id="hEd-kk-Lgh"/>
                     <navigationItem key="navigationItem" title="Rated Movies" id="tIE-qN-CX1"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="rtdTableView" destination="3VK-gh-rp2" id="cI5-Lk-m7j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805.5999999999999" y="358.4707646176912"/>
+            <point key="canvasLocation" x="1780" y="580.65967016491754"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -199,7 +205,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Psj-Dx-SJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748.79999999999995" y="359.82008995502252"/>
+            <point key="canvasLocation" x="748" y="581"/>
         </scene>
     </scenes>
     <resources>
