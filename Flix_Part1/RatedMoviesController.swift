@@ -63,6 +63,9 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
                 // TODO: Reload your table view data
                 self.rtdTableView.reloadData()
                 
+                //Stop refreshing
+                self.refreshControl.endRefreshing()
+                
             }
         }
         task.resume()
@@ -74,11 +77,12 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
 
     @IBOutlet weak var rtdTableView: UITableView!
     var movies: [[String: Any]] = []
+    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //----------refresh control instanciation----------
-        let refreshControl = UIRefreshControl()
+        refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(RatedMoviesController.didPullToRefresh(_:)), for: .valueChanged)
         
         // Do any additional setup after loading the view, typically from a nib.

@@ -11,6 +11,8 @@ import AlamofireImage
 class NowPlayingViewController: UIViewController , UITableViewDataSource{
     
     //-----------------------------------METHODS------------------------------------
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
@@ -63,6 +65,9 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource{
                 // TODO: Reload your table view data
                 self.movieTableView.reloadData()
                 
+                //stop the refresh
+                self.refreshControl.endRefreshing()
+                
             }
         }
         task.resume()
@@ -80,6 +85,7 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource{
     //------------Declaring variables and outlets-----------
     @IBOutlet weak var movieTableView: UITableView!
     var movies: [[String: Any]] = []
+    var refreshControl: UIRefreshControl!
     
     
 
@@ -87,7 +93,7 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource{
         super.viewDidLoad()
         
         //----------refresh control instanciation----------
-         let refreshControl = UIRefreshControl()
+        refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
         
         //inserting subviews
