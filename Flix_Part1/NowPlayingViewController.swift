@@ -37,7 +37,7 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource{
     
     func showAlert() {
         if !isInternetAvailable() {
-            let alert = UIAlertController(title: "Warning", message: "The Internet connection appears to be offline.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Cannot get movies", message: "The Internet connection appears to be offline.", preferredStyle: .alert)
             let action = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
             alert.addAction(action)
             present(alert, animated: true, completion: nil)

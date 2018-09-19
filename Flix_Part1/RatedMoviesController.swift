@@ -8,10 +8,48 @@
 
 import UIKit
 import AlamofireImage
+import Foundation
+import SystemConfiguration
+
 
 class RatedMoviesController: UIViewController , UITableViewDataSource{
     
     //-------------------METHODS--------------------------
+    
+    
+    
+    func isInternetAvailable() -> Bool
+    {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        return (isReachable && !needsConnection)
+    }
+    
+    func showAlert() {
+        if !isInternetAvailable() {
+            let alert = UIAlertController(title: "Cannot get movies", message: "The Internet connection appears to be offline.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
@@ -66,15 +104,19 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
                 //Stop refreshing
                 self.refreshControl.endRefreshing()
                 
+                //stop animating
+                self.acIndicatorView?.stopAnimating()
+                
             }
         }
         task.resume()
     }
     @objc func didPullToRefresh(_ refreshControl:  UIRefreshControl){
-                    fetchRatedMovies()
+        fetchRatedMovies()
     }
     //-------------------------------------ENDofMETHODS----------------------------
 
+    @IBOutlet weak var acIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var rtdTableView: UITableView!
     var movies: [[String: Any]] = []
     var refreshControl: UIRefreshControl!
@@ -93,8 +135,14 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
         //inserting subviews
         rtdTableView.insertSubview(refreshControl, at: 0)
         
+        //-------calling movies-------
         fetchRatedMovies()
         
+        //----------------Start the activity indicator------------
+        acIndicatorView.startAnimating()
+        
+        //------caling alert for no internet connection
+         showAlert()
         
     }
 
