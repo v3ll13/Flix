@@ -178,6 +178,18 @@ class RatedMoviesController: UIViewController , UITableViewDataSource, UISearchB
         
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = rtdTableView.indexPath(for: cell){
+            let movie = movies[indexPath.row]
+            let detailsViewController = segue.destination as! DetailsViewControllerRtd
+            detailsViewController.movie = movie
+            
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

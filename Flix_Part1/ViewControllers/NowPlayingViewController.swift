@@ -199,7 +199,7 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource, UISear
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let cell = sender as! UITableViewCell
-        if let indexPath = movieTableView.indexPath(for: cell){
+            if let indexPath = movieTableView.indexPath(for: cell){
             let movie = movies[indexPath.row]
             let detailsViewController = segue.destination as! DetailsViewController
             detailsViewController.movie = movie
