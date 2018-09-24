@@ -12,7 +12,7 @@ import Foundation
 import SystemConfiguration
 
 
-class RatedMoviesController: UIViewController , UITableViewDataSource{
+class RatedMoviesController: UIViewController , UITableViewDataSource, UISearchBarDelegate{
     
     //-------------------METHODS--------------------------
     
@@ -51,7 +51,8 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return filteredMovies.count
+        //return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,6 +96,8 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 // TODO: Get the array of movies
                 self.movies = movies
+                self.filteredMovies = self.movies
+                
                 
                 // TODO: Store the movies in a property to use elsewhere
                 
@@ -114,11 +117,37 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
     @objc func didPullToRefresh(_ refreshControl:  UIRefreshControl){
         fetchRatedMovies()
     }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredMovies = searchText.isEmpty ? movies : movies.filter{ (movie: [String: Any]) -> Bool in
+            return (movie["title"] as! String).localizedCaseInsensitiveContains(searchText)
+        }
+        rtdTableView.reloadData()
+    }
+    
+    
     //-------------------------------------ENDofMETHODS----------------------------
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var acIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var rtdTableView: UITableView!
     var movies: [[String: Any]] = []
+    var filteredMovies: [[String: Any]] = []
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
@@ -143,6 +172,10 @@ class RatedMoviesController: UIViewController , UITableViewDataSource{
         
         //------caling alert for no internet connection
          showAlert()
+        
+        //---------filtered data and searchbar-----
+        searchBar.delegate = self
+        
         
     }
 

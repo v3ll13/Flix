@@ -18,7 +18,7 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource, UISear
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var acIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var movieTableView: UITableView!
-    var movies: [[String: Any]] = []
+    var movies: [[String: Any]] = [];
     var filteredMovies: [[String: Any]] = [];
     var refreshControl: UIRefreshControl!
     

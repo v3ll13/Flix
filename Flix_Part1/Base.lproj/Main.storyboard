@@ -70,7 +70,7 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-km-d9J">
-                                <rect key="frame" x="189" y="502" width="37" height="37"/>
+                                <rect key="frame" x="189" y="423" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <color key="color" red="0.15982812643051147" green="0.28010934591293335" blue="0.064090602099895477" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -203,7 +203,7 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0aR-OI-1b4">
-                                <rect key="frame" x="189" y="486" width="37" height="37"/>
+                                <rect key="frame" x="189" y="419" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.061223387718200684" green="0.20196902751922607" blue="0.05151965469121933" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
@@ -216,6 +216,7 @@
                     <connections>
                         <outlet property="acIndicatorView" destination="0aR-OI-1b4" id="T2N-eu-a3Q"/>
                         <outlet property="rtdTableView" destination="3VK-gh-rp2" id="cI5-Lk-m7j"/>
+                        <outlet property="searchBar" destination="FiT-vv-3Dq" id="AdW-ZB-lzK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
