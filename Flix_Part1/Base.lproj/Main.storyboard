@@ -64,6 +64,7 @@
                                             <outlet property="overviewLabel" destination="IUR-mH-hUB" id="Wc4-oq-gzH"/>
                                             <outlet property="posterImageView" destination="Zbc-s3-SXA" id="DDO-gS-8Eg"/>
                                             <outlet property="title_Label" destination="XEw-Vd-bVO" id="EvB-io-3cf"/>
+                                            <segue destination="Uef-Bx-5Qj" kind="show" id="3JS-bf-rJY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -82,11 +83,27 @@
                     <connections>
                         <outlet property="acIndicatorView" destination="Y0T-km-d9J" id="sFk-9i-snO"/>
                         <outlet property="movieTableView" destination="S71-kr-knc" id="z9J-gQ-gR1"/>
+                        <outlet property="searchBar" destination="lQi-ku-K6L" id="ycW-Ao-m59"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1804.3478260869567" y="-322.82608695652175"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KtS-1t-dsb">
+            <objects>
+                <viewController id="Uef-Bx-5Qj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lxc-gZ-zyw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6IF-fm-Lag"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWj-BF-VEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2641" y="-323"/>
         </scene>
         <!--Rated Movies-->
         <scene sceneID="wg7-f3-ORb">
@@ -149,6 +166,7 @@
                                             <outlet property="postImageView" destination="lxL-yu-Uz2" id="gKY-47-A0F"/>
                                             <outlet property="rtdOverview" destination="xwA-gf-4LE" id="QuO-Do-QLM"/>
                                             <outlet property="rtdTitle" destination="x2m-rk-qGZ" id="2Wq-sR-lhI"/>
+                                            <segue destination="a2V-8q-tga" kind="show" id="pfi-7I-fAL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -172,6 +190,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1779.7101449275365" y="580.43478260869574"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Qxi-dP-H41">
+            <objects>
+                <viewController id="a2V-8q-tga" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ahm-lr-Rg6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qNz-S1-hWt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZO-tA-9D7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2641" y="580"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

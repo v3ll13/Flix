@@ -10,7 +10,54 @@ import AlamofireImage
 import Foundation
 import SystemConfiguration
 
-class NowPlayingViewController: UIViewController , UITableViewDataSource{
+class NowPlayingViewController: UIViewController , UITableViewDataSource, UISearchBarDelegate {
+    
+    
+    //---------------Declaring variables and outlets-----------------
+   
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var acIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var movieTableView: UITableView!
+    var movies: [[String: Any]] = []
+    var filteredMovies: [[String: Any]] = [];
+    var refreshControl: UIRefreshControl!
+    
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //----------refresh control instanciation----------
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
+        
+        //inserting subviews
+        movieTableView.insertSubview(refreshControl, at: 0)
+        
+        //---------Do any additional setup after loading the view---------
+        movieTableView.dataSource = self
+        movieTableView.rowHeight = 230
+        movieTableView.estimatedRowHeight = 230
+        movieTableView.sectionHeaderHeight = 0
+        movieTableView.sectionFooterHeight = 0
+        
+        //-----------calling method fetchMoivies---------
+        fetchMovies()
+        
+         //----------------Start the activity indicator------------
+         acIndicatorView.startAnimating()
+        
+        //----call for the internet connection
+        showAlert()
+        
+        //---------filtered data and searchbar-----
+        searchBar.delegate = self
+        
+
+        
+    }
+    
+    
     
     //-----------------------------------METHODS------------------------------------
     
@@ -46,7 +93,8 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return filteredMovies.count
+        //return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,9 +130,7 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource{
             
             // This will run when the network request returns
             if let error = error {
-                //if self.movies == nil{
-                  //  self.acIndicatorView.startAnimating()
-                //}
+                
                 print(error.localizedDescription)
             } else if let data = data {
                 
@@ -94,6 +140,7 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource{
                 // TODO: Get the array of movies
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 self.movies = movies
+                self.filteredMovies = self.movies
                 
                 
                 //self.acIndicatorView.stopAnimating()
@@ -114,51 +161,40 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource{
         task.resume()
     }
     
+    
+    
     @objc func didPullToRefresh(_ refreshControl:  UIRefreshControl){
         fetchMovies()
         
     }
     
-    //---------------------------------ENDofMETHODS------------------------------------------
     
     
     
-    //---------------Declaring variables and outlets-----------------
-   
-    @IBOutlet weak var acIndicatorView: UIActivityIndicatorView!
-    @IBOutlet weak var movieTableView: UITableView!
-    var movies: [[String: Any]] = []
-    var refreshControl: UIRefreshControl!
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //----------refresh control instanciation----------
-        refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
-        
-        //inserting subviews
-        movieTableView.insertSubview(refreshControl, at: 0)
-        
-        //---------Do any additional setup after loading the view---------
-        movieTableView.dataSource = self
-        movieTableView.rowHeight = 200
-        movieTableView.estimatedRowHeight = 250
-        
-        //-----------calling method fetchMoivies---------
-        fetchMovies()
-        
-         //----------------Start the activity indicator------------
-         acIndicatorView.startAnimating()
-        
-        //----call for the internet connection
-        showAlert()
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredMovies = searchText.isEmpty ? movies : movies.filter{ (movie: [String: Any]) -> Bool in
+            return (movie["title"] as! String).localizedCaseInsensitiveContains(searchText)
+        }
+        movieTableView.reloadData()
     }
     
     
     
+    //---------------------------------ENDofMETHODS------------------------------------------
     
 
     override func didReceiveMemoryWarning() {
