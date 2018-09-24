@@ -12,6 +12,7 @@
 		F30E209A215033C700B4DC73 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E2099215033C700B4DC73 /* NowPlayingViewController.swift */; };
 		F30E20A92150780500B4DC73 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E20A82150780500B4DC73 /* MovieCell.swift */; };
 		F397DEAA2158794D004BF0EF /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397DEA92158794D004BF0EF /* DetailsViewController.swift */; };
+		F397DEAE21587EB6004BF0EF /* DetailsViewControllerRtd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397DEAD21587EB6004BF0EF /* DetailsViewControllerRtd.swift */; };
 		F3BF2CE1214EA15D0051855C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF2CE0214EA15D0051855C /* AppDelegate.swift */; };
 		F3BF2CE5214EA15D0051855C /* RatedMoviesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF2CE4214EA15D0051855C /* RatedMoviesController.swift */; };
 		F3BF2CE8214EA15D0051855C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3BF2CE6214EA15D0051855C /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		F30E2099215033C700B4DC73 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingViewController.swift; path = /Users/ralphalexcharlemagne/Desktop/Flix_Part1/Flix_Part1/ViewControllers/NowPlayingViewController.swift; sourceTree = "<absolute>"; };
 		F30E20A82150780500B4DC73 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		F397DEA92158794D004BF0EF /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		F397DEAD21587EB6004BF0EF /* DetailsViewControllerRtd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerRtd.swift; sourceTree = "<group>"; };
 		F3BF2CDD214EA15D0051855C /* Flix_Part1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix_Part1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BF2CE0214EA15D0051855C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3BF2CE4214EA15D0051855C /* RatedMoviesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatedMoviesController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				F30E2099215033C700B4DC73 /* NowPlayingViewController.swift */,
 				F3BF2CE4214EA15D0051855C /* RatedMoviesController.swift */,
 				F397DEA92158794D004BF0EF /* DetailsViewController.swift */,
+				F397DEAD21587EB6004BF0EF /* DetailsViewControllerRtd.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F397DEAE21587EB6004BF0EF /* DetailsViewControllerRtd.swift in Sources */,
 				F3BF2CE5214EA15D0051855C /* RatedMoviesController.swift in Sources */,
 				F30E209A215033C700B4DC73 /* NowPlayingViewController.swift in Sources */,
 				F30E20A92150780500B4DC73 /* MovieCell.swift in Sources */,

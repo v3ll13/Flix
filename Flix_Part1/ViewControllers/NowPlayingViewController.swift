@@ -197,6 +197,15 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource, UISear
     //---------------------------------ENDofMETHODS------------------------------------------
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let cell = sender as! UITableViewCell
+        if let indexPath = movieTableView.indexPath(for: cell){
+            let movie = movies[indexPath.row]
+            let detailsViewController = segue.destination as! DetailsViewController
+            detailsViewController.movie = movie
+        
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
