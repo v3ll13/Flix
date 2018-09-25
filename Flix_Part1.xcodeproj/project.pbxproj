@@ -11,6 +11,8 @@
 		C1BA09790AD1F27B52FAD848 /* Pods_Flix_Part1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5672613DD26F9D2692D0CB /* Pods_Flix_Part1.framework */; };
 		F30E209A215033C700B4DC73 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E2099215033C700B4DC73 /* NowPlayingViewController.swift */; };
 		F30E20A92150780500B4DC73 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E20A82150780500B4DC73 /* MovieCell.swift */; };
+		F338231A2159939C00A18443 /* PosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33823192159939C00A18443 /* PosterCell.swift */; };
+		F338231C2159940500A18443 /* SuperheroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F338231B2159940500A18443 /* SuperheroViewController.swift */; };
 		F397DEAA2158794D004BF0EF /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397DEA92158794D004BF0EF /* DetailsViewController.swift */; };
 		F397DEAE21587EB6004BF0EF /* DetailsViewControllerRtd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397DEAD21587EB6004BF0EF /* DetailsViewControllerRtd.swift */; };
 		F3BF2CE1214EA15D0051855C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF2CE0214EA15D0051855C /* AppDelegate.swift */; };
@@ -52,6 +54,8 @@
 		D9856818D8A0572C7C55BF14 /* Pods-Flix_Part1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix_Part1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flix_Part1Tests/Pods-Flix_Part1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F30E2099215033C700B4DC73 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingViewController.swift; path = /Users/ralphalexcharlemagne/Desktop/Flix_Part1/Flix_Part1/ViewControllers/NowPlayingViewController.swift; sourceTree = "<absolute>"; };
 		F30E20A82150780500B4DC73 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		F33823192159939C00A18443 /* PosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCell.swift; sourceTree = "<group>"; };
+		F338231B2159940500A18443 /* SuperheroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroViewController.swift; sourceTree = "<group>"; };
 		F397DEA92158794D004BF0EF /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F397DEAD21587EB6004BF0EF /* DetailsViewControllerRtd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerRtd.swift; sourceTree = "<group>"; };
 		F3BF2CDD214EA15D0051855C /* Flix_Part1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix_Part1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +133,7 @@
 				F3BF2CE4214EA15D0051855C /* RatedMoviesController.swift */,
 				F397DEA92158794D004BF0EF /* DetailsViewController.swift */,
 				F397DEAD21587EB6004BF0EF /* DetailsViewControllerRtd.swift */,
+				F338231B2159940500A18443 /* SuperheroViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			children = (
 				F3E704152150842300625540 /* RatedCell.swift */,
 				F30E20A82150780500B4DC73 /* MovieCell.swift */,
+				F33823192159939C00A18443 /* PosterCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,7 +417,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F338231A2159939C00A18443 /* PosterCell.swift in Sources */,
 				F397DEAE21587EB6004BF0EF /* DetailsViewControllerRtd.swift in Sources */,
+				F338231C2159940500A18443 /* SuperheroViewController.swift in Sources */,
 				F3BF2CE5214EA15D0051855C /* RatedMoviesController.swift in Sources */,
 				F30E209A215033C700B4DC73 /* NowPlayingViewController.swift in Sources */,
 				F30E20A92150780500B4DC73 /* MovieCell.swift in Sources */,
