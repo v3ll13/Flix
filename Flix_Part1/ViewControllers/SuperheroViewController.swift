@@ -86,7 +86,7 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource{
         let layout = CollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumInteritemSpacing = 5
         layout.minimumLineSpacing = layout.minimumInteritemSpacing
-        let cellsPerline: CGFloat = 2 
+        let cellsPerline: CGFloat = 2
         let interItemSpacingTotal = layout.minimumInteritemSpacing * (cellsPerline - 1) 
         let width = CollectionView.frame.size.width / cellsPerline - interItemSpacingTotal / cellsPerline
         layout.itemSize = CGSize(width: width, height: width * 3 / 2)
@@ -103,14 +103,22 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource{
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
+        
+        let cell = sender as! UICollectionViewCell
+        if let indexPath = CollectionView.indexPath(for: cell){
+            let movie = movies[indexPath.row]
+            let detailsViewController = segue.destination as! DetailsViewController
+            detailsViewController.movie = movie
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
+  }
 }
+

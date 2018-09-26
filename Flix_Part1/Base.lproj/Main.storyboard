@@ -177,6 +177,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterImageView" destination="lS9-Lf-Rul" id="xom-bd-bZe"/>
+                                            <segue destination="Uef-Bx-5Qj" kind="show" id="SkC-I3-1JK"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -192,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFk-gl-h7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5744.9275362318849" y="-8.1521739130434785"/>
+            <point key="canvasLocation" x="6077" y="-714"/>
         </scene>
         <!--Rated Movies-->
         <scene sceneID="wg7-f3-ORb">
@@ -419,4 +420,7 @@
         <image name="stars" width="32" height="32"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SkC-I3-1JK"/>
+    </inferredMetricsTieBreakers>
 </document>
