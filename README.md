@@ -12,6 +12,8 @@ The following **required** user stories are complete:
 - [X] User can scroll through a list of movies currently playing in theaters from The Movie DB API (+5pt)
 - [X] User can "Pull to refresh" the movie list (+2pt)
 - [X] User sees a loading state while waiting for the movies to load (+2pt)
+- [ ] Movie feed view (+3pt)
+- [ ] Detail view (+2pt)
 
 The following **stretch** user stories are implemented:
 
@@ -20,6 +22,8 @@ The following **stretch** user stories are implemented:
 - [ ] While poster is being fetched, user see's a placeholder image (+1pt)
 - [ ] User sees image transition for images coming from network, not when it is loaded from cache (+1pt)
 - [ ] Customize the selection effect of the cell (+1pt)
+- [ ] Dynamic Height Cells (+1)
+- [ ] Collection View AutoLayout (+2)
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete (+2pt)
 
 The following **additional** user stories are implemented:
