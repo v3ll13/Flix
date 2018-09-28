@@ -14,8 +14,10 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var title_Label: UILabel!
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         // Initialization code
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

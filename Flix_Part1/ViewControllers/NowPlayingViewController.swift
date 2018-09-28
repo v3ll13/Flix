@@ -106,6 +106,7 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource, UISear
         cell.title_Label.text = title
         cell.overviewLabel.text = overview
         
+        
         //request the images
         let posterPathString = movie["poster_path"] as! String
         let baseURLString = "https://image.tmdb.org/t/p/w500"
