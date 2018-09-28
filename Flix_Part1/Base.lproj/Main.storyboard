@@ -52,16 +52,16 @@
                                                     </constraints>
                                                     <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wonder Woman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEw-Vd-bVO">
-                                                    <rect key="frame" x="145" y="8" width="261" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wonder Woman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEw-Vd-bVO">
+                                                    <rect key="frame" x="145" y="19" width="261" height="17"/>
                                                     <color key="backgroundColor" red="0.027396481484174728" green="0.93996673822402954" blue="0.95307368040084839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="An Amazon princess comes to the world of man to become the greatest of the female superheroes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUR-mH-hUB">
-                                                    <rect key="frame" x="145" y="33" width="261" height="130"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="An Amazon princess comes to the world of man to become the greatest of the female superheroes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUR-mH-hUB">
+                                                    <rect key="frame" x="145" y="44" width="261" height="131.66666666666666"/>
                                                     <color key="backgroundColor" red="0.0015061796875670552" green="0.77818137407302856" blue="0.99485069513320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -71,12 +71,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IUR-mH-hUB" secondAttribute="bottom" constant="8" id="1dk-tt-XKr"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IUR-mH-hUB" secondAttribute="bottom" constant="8" id="46D-RK-8I8"/>
-                                                <constraint firstItem="XEw-Vd-bVO" firstAttribute="top" secondItem="umy-ua-qLc" secondAttribute="topMargin" constant="8" id="4BG-fi-DkS"/>
                                                 <constraint firstItem="XEw-Vd-bVO" firstAttribute="leading" secondItem="Zbc-s3-SXA" secondAttribute="trailing" constant="8" id="5CK-BS-m1S"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zbc-s3-SXA" secondAttribute="bottom" constant="8" id="5N2-lx-Dcd"/>
                                                 <constraint firstItem="XEw-Vd-bVO" firstAttribute="leading" secondItem="Zbc-s3-SXA" secondAttribute="trailing" constant="8" id="70G-7D-Gze"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zbc-s3-SXA" secondAttribute="bottom" constant="8" id="88s-w0-la0"/>
-                                                <constraint firstItem="IUR-mH-hUB" firstAttribute="top" secondItem="XEw-Vd-bVO" secondAttribute="bottom" constant="8" id="9yt-8B-6b7"/>
                                                 <constraint firstItem="XEw-Vd-bVO" firstAttribute="top" secondItem="umy-ua-qLc" secondAttribute="topMargin" constant="8" id="ARa-dE-tSo"/>
                                                 <constraint firstItem="Zbc-s3-SXA" firstAttribute="top" secondItem="umy-ua-qLc" secondAttribute="top" constant="8" id="Abf-uv-vxZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zbc-s3-SXA" secondAttribute="bottom" constant="8" id="Bd5-r8-wdw"/>
@@ -84,9 +82,7 @@
                                                 <constraint firstItem="IUR-mH-hUB" firstAttribute="top" secondItem="XEw-Vd-bVO" secondAttribute="bottom" constant="8" id="KQH-21-Gwo"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IUR-mH-hUB" secondAttribute="bottom" constant="8" id="LAj-2q-QPq"/>
                                                 <constraint firstItem="IUR-mH-hUB" firstAttribute="top" secondItem="XEw-Vd-bVO" secondAttribute="bottom" constant="8" id="MPv-5t-icp"/>
-                                                <constraint firstItem="IUR-mH-hUB" firstAttribute="bottom" secondItem="XEw-Vd-bVO" secondAttribute="bottom" id="Mzw-Qn-ZRh"/>
                                                 <constraint firstItem="Zbc-s3-SXA" firstAttribute="leading" secondItem="umy-ua-qLc" secondAttribute="leading" constant="8" id="OQ3-WB-1e9"/>
-                                                <constraint firstItem="IUR-mH-hUB" firstAttribute="bottom" secondItem="XEw-Vd-bVO" secondAttribute="bottom" id="OUK-NQ-WfN"/>
                                                 <constraint firstItem="Zbc-s3-SXA" firstAttribute="top" secondItem="umy-ua-qLc" secondAttribute="top" constant="8" id="PNS-wK-ey3"/>
                                                 <constraint firstItem="XEw-Vd-bVO" firstAttribute="trailing" secondItem="umy-ua-qLc" secondAttribute="trailingMargin" constant="8" id="Tg0-bg-qJo"/>
                                                 <constraint firstItem="IUR-mH-hUB" firstAttribute="top" secondItem="XEw-Vd-bVO" secondAttribute="bottom" constant="8" id="U53-nc-LzC"/>
@@ -94,13 +90,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="XEw-Vd-bVO" secondAttribute="trailing" constant="8" id="Vhm-te-gbY"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IUR-mH-hUB" secondAttribute="bottom" constant="8" id="X4h-3c-Deu"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="IUR-mH-hUB" secondAttribute="trailing" constant="8" id="Xbt-xN-gew"/>
-                                                <constraint firstItem="XEw-Vd-bVO" firstAttribute="top" secondItem="umy-ua-qLc" secondAttribute="topMargin" constant="8" id="Xko-Yl-9GE"/>
                                                 <constraint firstItem="IUR-mH-hUB" firstAttribute="top" secondItem="XEw-Vd-bVO" secondAttribute="bottom" constant="8" id="YAV-78-4UX"/>
                                                 <constraint firstAttribute="trailing" secondItem="XEw-Vd-bVO" secondAttribute="trailing" constant="8" id="hB6-l0-m8H"/>
-                                                <constraint firstItem="XEw-Vd-bVO" firstAttribute="top" secondItem="umy-ua-qLc" secondAttribute="top" constant="8" id="jUh-Vy-afn"/>
-                                                <constraint firstItem="XEw-Vd-bVO" firstAttribute="top" secondItem="umy-ua-qLc" secondAttribute="topMargin" constant="8" id="jsj-rT-SAq"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IUR-mH-hUB" secondAttribute="bottom" constant="8" id="kR7-kN-bWx"/>
-                                                <constraint firstItem="XEw-Vd-bVO" firstAttribute="top" secondItem="umy-ua-qLc" secondAttribute="topMargin" constant="8" id="kfV-3w-L9z"/>
                                                 <constraint firstItem="IUR-mH-hUB" firstAttribute="top" secondItem="XEw-Vd-bVO" secondAttribute="bottom" constant="8" id="lNG-hE-nXb"/>
                                                 <constraint firstItem="IUR-mH-hUB" firstAttribute="top" secondItem="XEw-Vd-bVO" secondAttribute="bottom" constant="8" id="sGH-Vq-67t"/>
                                                 <constraint firstItem="IUR-mH-hUB" firstAttribute="top" secondItem="XEw-Vd-bVO" secondAttribute="bottom" constant="8" id="suu-RY-CzO"/>
