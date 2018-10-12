@@ -53,6 +53,7 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource, UISear
         //---------filtered data and searchbar-----
         searchBar.delegate = self
         
+        
 
         
     }
@@ -93,8 +94,11 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource, UISear
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredMovies.count
-        //return movies.count
+        if self.searchBar.text!.isEmpty{
+            return self.movies.count
+        }else{
+            return filteredMovies.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -190,11 +194,14 @@ class NowPlayingViewController: UIViewController , UITableViewDataSource, UISear
         filteredMovies = searchText.isEmpty ? movies : movies.filter{ (movie: [String: Any]) -> Bool in
             return (movie["title"] as! String).localizedCaseInsensitiveContains(searchText)
         }
-        movieTableView.reloadData()
+        self.movieTableView.reloadData()
     }
     
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     //---------------------------------ENDofMETHODS------------------------------------------
     
 
